@@ -1,0 +1,10 @@
+function Course(props){
+
+
+    return(
+        <>
+        <h1></h1>
+        </>
+    );
+}
+export default Course;
