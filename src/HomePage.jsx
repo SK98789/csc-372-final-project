@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
-import './HomePage.css'
+import './App.css'
 function Home() {
     const [course_name, setName] = useState('');
     const { user, logout } = useAuth();
@@ -15,20 +15,29 @@ function Home() {
 
     useEffect(() => {
         user_google_id = user.googleid;
-        CourseService.getAllCourses(user_google_id).then((res) => {
-            setCourses(res.data);
-            document.title = 'Courses List';
-        });
+        refresh();
     }, []);
+
+    function getInspiration(){
+        CourseService.getExternalAPIQuote().then((res) => {
+            let value = res.data;
+            let quote = `"${value.quoteText}" \n - ${value.quoteAuthor}`;
+            alert(quote);
+        });
+    }
+
+    function refresh(){
+         CourseService.getAllCourses(user_google_id).then((res) => {
+                setCourses(res.data);
+                document.title = 'Courses List';
+            });
+    }
 
     function createNewCourse() {
 
         const params = { user_google_id, course_name };
         CourseService.createCourse(params).then(() => {
-            CourseService.getAllCourses(user_google_id).then((res) => {
-                setCourses(res.data);
-                document.title = 'Courses List';
-            });
+            refresh();
         });
     }
 
@@ -37,14 +46,16 @@ function Home() {
             <div className="space-between">
                 <h1>Classes</h1>
                 <div>
-                    <form action={createNewCourse}>
-                        <input type="text" onChange={(e) => setName(e.target.value)} required></input>
+                    <form action={createNewCourse} className="row-padding">
+                        <input id="class-input-bar" type="text" onChange={(e) => setName(e.target.value)} required></input>
                         <input type="submit" value="Add Class" className="button-class" />
+                        <button type="button" className="button-class" onClick={getInspiration}>Get Inspiration</button>
                     </form>
                 </div>
             </div>
+            <hr/>
             {courses.map(course => (
-                <CourseDisplay courseName={course.course_name} key={course.id} courseClicked={() => {navigate('/course' ); }} />
+                <CourseDisplay refresh={refresh} courseId={course.id} courseName={course.course_name} key={course.id} courseClicked={() => {navigate('/course', {state: {course}}  ); }} />
 
             ))}
         </>

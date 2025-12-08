@@ -1,7 +1,18 @@
-body{
-  background-color: #feeccc;
-  color: #373856;
-  
+:root {
+  --primary-banner: #46008b;
+  --semi-transparent: rgba(55, 55, 55, 0.5);
+  --secondary-color: #463359;
+}
+
+body {
+  margin: 0;
+  background-color: white;
+  color: black;
+
+}
+
+main {
+  padding: 0px 20px;
 }
 
 #root {
@@ -10,22 +21,144 @@ body{
   text-align: center;
 }
 
+h2,
+h3 {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
 .banner {
-  color: #f1f1f1;
+  padding: 0px 20px;
+  color: white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #c14a3f;
+  background-color: var(--primary-banner);
   align-items: center;
 }
 
-.banner button{
-  color: #e39400;
+.banner h1 {
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.space-between {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.icon-button {
+  color: white;
   border: none;
   background-color: transparent;
 }
 
-.banner h1 {
-  font-size: 40px;
-  font-weight: bolder;
+.icon-button-secondary {
+  color: var(--secondary-color);
+  border: none;
+  background-color: transparent;
+}
+
+.icons {
+  font-size: 3em;
+}
+
+.icons-small {
+  font-size: 2em;
+}
+
+.course {
+  margin: 10px 0px;
+  padding: 0px 10px 0px 10px;
+  border: 1px solid var(--semi-transparent);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+
+.button-class {
+  font-size: 12pt;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  ;
+  background-color: var(--primary-banner);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  border-color: transparent;
+  max-width: 200px;
+}
+
+.row-padding {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.columns {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#description{
+  overflow-wrap: break-word;
+  max-width: 60vw;
+  text-align: left;
+  padding-left: 10px;
+}
+
+#name-type-task{
+  max-width: 80vw;;
+}
+
+.task-rows{
+  max-width: 100vw;
+  margin: 10px 0px;
+  padding: 0px 10px 0px 10px;
+  border: 1px solid var(--semi-transparent);
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: space-between;
+  align-items: baseline;
+  border-radius: 10px;
+}
+.baseline{
+  align-items: baseline;
+}
+
+
+#form-title {
+  font-size: 20pt;
+  max-width: 500px;
+}
+
+input {
+  border-color: transparent;
+  border-bottom-color: black;
+}
+
+input:focus {
+  outline: none;
+  border-bottom-color: var(--primary-banner);
+}
+
+textarea {
+  resize: vertical;
+  border-radius: 10px;
+}
+
+textarea:focus {
+  outline: none;
+  border-width: 2px;
+  border-color: var(--primary-banner);
+}
+
+#class-input-bar {
+  min-height: 3em;
+  border-radius: 15px;
+  border-color: var(--semi-transparent);
 }

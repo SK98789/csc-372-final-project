@@ -26,7 +26,7 @@ app.use(passport.session());
 const cors = require('cors');
 app.use(
     cors({
-        origin: process.env.CLIENT_BASE_URL, // Vite frontend URL
+        origin: [process.env.CLIENT_BASE_URL, 'https://api.forismatic.com'], // Vite frontend URL
         methods: 'GET,POST,PUT,DELETE',
         credentials: true,
     })
@@ -34,9 +34,13 @@ app.use(
 
 const userRoutes = require('./routes/userRoutes');
 const courseRoutes = require('./routes/courseRoutes');
+const taskRoutes = require('./routes/taskRoutes');
+const subTaskRoutes = require('./routes/subTaskRoutes');
 
 app.use('/users', userRoutes);
 app.use('/courses', courseRoutes);
+app.use('/tasks', taskRoutes);
+app.use('/subtasks', subTaskRoutes);
 app.use('/auth', require('./auth/authRoute'));
 
 const PORT = process.env.PORT || 3000;

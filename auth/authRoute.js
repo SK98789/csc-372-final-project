@@ -37,7 +37,7 @@ router.get(
     delete req.session.returnTo; // Clean up the session
 
     // Redirect the user back to the frontend
-    res.redirect(`${CLIENT_BASE_URL}${returnTo}`);
+    res.redirect(`${CLIENT_BASE_URL}`);
   }
 );
 

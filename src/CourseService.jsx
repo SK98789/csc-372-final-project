@@ -10,6 +10,12 @@ class CoursesService {
   createCourse(course) {
     return axios.post(COURSES_API_BASE_URL + "/", course);
   }
+  deleteCourse(id) {
+    return axios.delete(`${COURSES_API_BASE_URL}/${id}`);
+  }
+  getExternalAPIQuote(){
+    return axios.get(COURSES_API_BASE_URL + "/getquote");
+  }
 }
 
 export default new CoursesService();
