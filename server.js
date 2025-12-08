@@ -43,6 +43,15 @@ app.use('/tasks', taskRoutes);
 app.use('/subtasks', subTaskRoutes);
 app.use('/auth', require('./auth/authRoute'));
 
+
+// Serve the static files from the React app's build directory
+app.use(express.static(path.join(__dirname, 'react-frontend/dist')));
+
+// Direct all non-API requests to the React app's index.html
+app.get('/{*splat}', (req, res) => {
+  res.sendFile(path.join(__dirname, 'react-frontend/dist', 'index.html'));
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, function () {
     console.log("Server listening on port: " + PORT + "!");
