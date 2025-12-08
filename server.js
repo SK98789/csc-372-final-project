@@ -1,6 +1,7 @@
 //server.js
 "use strict";
 const express = require("express");
+const path = require('path');
 const app = express();
 
 const multer = require("multer");
