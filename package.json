@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:frontend:force": "npm --prefix react-frontend install --include=dev && npm --prefix react-frontend run build"
+    "build:frontend:force": "npm --prefix react-client install --include=dev && npm --prefix react-client run build"
   },
   "keywords": [],
   "author": "",
