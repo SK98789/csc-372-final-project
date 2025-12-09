@@ -21,7 +21,7 @@ async function deleteTask(id) {
 }
 
 async function updateTaskIsActive(id, isStillActive){
-    let queryText = "UPDATE tasks SET still_active = $1 WHERE id = $2 ;";
+    let queryText = "UPDATE tasks SET still_active = $1 WHERE id = $2 RETURNING *;";
     const values = [isStillActive, id];
     const result = await pool.query(queryText, values);
     return result.rows[0];
