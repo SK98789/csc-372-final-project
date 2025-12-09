@@ -39,12 +39,15 @@ function TaskDisplay(props) {
                     <h3>({props.task.task_type})</h3>
                     <p id='description'>{props.task.description}</p>
                 </div>
-                <button className='icon-button-secondary' onClick={handleTaskSwitch}>
-                    <FontAwesomeIcon icon={taskActiveIcon} className='icons' />
-                </button>
-                <button className='icon-button-secondary' onClick={deleteTask}>
-                    <FontAwesomeIcon icon={faTrash} className='icons-small' />
-                </button>
+                <div className='rows'>
+                    <button className='icon-button-secondary' onClick={handleTaskSwitch}>
+                        <FontAwesomeIcon icon={taskActiveIcon} className='icons' />
+                    </button>
+                    <button className='icon-button-secondary' onClick={deleteTask}>
+                        <FontAwesomeIcon icon={faTrash} className='icons-small' />
+                    </button>
+
+                </div>
             </div>
 
         </>

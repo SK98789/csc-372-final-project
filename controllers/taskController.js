@@ -48,7 +48,7 @@ async function deleteTaskById(req, res) {
 
 async function updateTaskIsActive(req, res) {
     const {id, isStillActive} = req.body; 
-    if (id && isStillActive) {
+    if (id) {
         try {
             const updatedCourse = await model.updateTaskIsActive(id, isStillActive);
             res.status(201).json(updatedCourse);
@@ -57,7 +57,8 @@ async function updateTaskIsActive(req, res) {
             res.status(500).send("Server error");
         }
     } else {
-        res.status(400).send("Missing required fields!");
+        
+        res.status(400).send(req.body);
     }
 }
 

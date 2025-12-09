@@ -126,6 +126,11 @@ h3 {
   align-items: baseline;
   border-radius: 10px;
 }
+
+.rows {
+  display: flex;
+  flex-direction: row;
+}
 .baseline{
   align-items: baseline;
 }

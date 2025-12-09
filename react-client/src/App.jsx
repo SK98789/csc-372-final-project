@@ -19,11 +19,6 @@ function App() {
       <div className="banner">
         <h1>EduPlanner</h1>
         <div>
-          <Link to='/calendar'>
-            <button className='icon-button'>
-              <FontAwesomeIcon icon={faCalendarDays} className='icons' />
-            </button>
-          </Link>
           <Link to="/home">
             <button className='icon-button'>
               <FontAwesomeIcon icon={faHouse} className='icons' />
