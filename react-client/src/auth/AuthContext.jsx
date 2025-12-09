@@ -19,7 +19,6 @@ export function AuthProvider({ children }) {
         const { data } = await axios.get(`${BACKEND_URL}/auth/me`, {
           withCredentials: true, // Include cookies in the request
         });
-        console.log("User session data:", data);
         setUser(data); // User is logged in
       } catch (error) {
         // No user or session is invalid

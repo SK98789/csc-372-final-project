@@ -1,21 +1,26 @@
-# React + Vite
+#Setup
+Simply follow the link below and create a new account with a google account, or log in if you are a returning visitor.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#App URL
+https://csc-372-final-project.onrender.com/
 
-Currently, two official plugins are available:
+#Reflection Writeup
+##Design Choices
+I chose React for the frontend and Node/Express for the backend as I felt more comfortable with Client Side Rendering and the concept of React Components felt cleaner to me.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+As for the database, I went with Neon using Postgres because it makes it very easy to make queries, and serverless postgres is simpler to handle for a short project.
 
-## React Compiler
+##Challenges
+One decent technical hurdle I had was actually deploying the project using Render. I solved it via trial and error. The main reason it was a hurdle was it took a bit of time due to the fact that I would redeploy it after making a change. There are also many different pieces of information to change when switching from local hosting to actual deployment, like environment variables, authentication urls, and adding scripts to the package file.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Another issue I had was figuring out how to add a popup modal for a form. Although I looked into making something myself, I insted opted to use the react-modal package, as it saved a lot of time and it also handles accessibility considerations as well.
 
-## Expanding the ESLint configuration
+##Learning Outcomes
+I have learned that full-stack development is very complex. For example, getting a user's classes stored in the database has to follow the path component -> service -> route -> controller -> model and back again. 
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+I have learned that there are many rules to front end development. I was unaware of many of the details of CSS and layout designs. I also have learned that I am not good at styling pages.
 
+Related to being bad at styling pages, I also learned that sometimes its important to use available packages rather than try to make certain things myself. This can save time, and many packages have also already considered things like accessibility, which is important to include.
 
-# MVP Demo Link
-
-https://uncg-my.sharepoint.com/:v:/g/personal/s_korzekwa_uncg_edu/IQDej3c1p4kXSIINiBnicD9ZAfE2jfPcBqW7FAosF7Zdm2s?e=HFddHw
+##Future Work
+I would add more features like sub-features to allow the user to create sub-tasks within their tasks. I also would add more profile information for the user. Additionally, I would add a calendar to display the user's tasks more cleanly, and I would like to filter their tasks by date as well.

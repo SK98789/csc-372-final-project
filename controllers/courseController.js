@@ -25,7 +25,6 @@ async function getCourseFromUserAndCourseId(req, res) {
 
 async function createCourse(req, res) {
     const { user_google_id, course_name } = req.body;
-    console.log(req.body);
     if (user_google_id && course_name) {
         try {
             const newCourse = await model.addCourse(user_google_id, course_name);

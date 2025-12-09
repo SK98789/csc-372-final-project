@@ -66,7 +66,7 @@ const createTables = async () => {
         await pool.query(createTaskTable);
         await pool.query(createSubTaskTable);
 
-        console.log("Users table created or already exists");
+        console.log("Tables created or already exist");
     } catch (error) {
         console.error("Error creating tables:", error);
     }
