@@ -1,5 +1,5 @@
 import './App.css'
-import Login from './LoginPage'
+import Login from './auth/LoginPage.jsx';
 import Home from './HomePage'
 import { Link } from 'react-router-dom';
 import ProtectedLayout from './auth/ProtectedLayout.jsx';
@@ -10,7 +10,7 @@ import Course from './CoursePage.jsx';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse, faCalendarDays, faCircleUser } from '@fortawesome/free-solid-svg-icons'
-import Profile from './ProfilePage.jsx';
+import Profile from './auth/ProfilePage.jsx';
 
 
 function App() {
