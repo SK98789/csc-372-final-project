@@ -3,7 +3,7 @@ import { useAuth } from './AuthContext.jsx';
 import { useNavigate } from 'react-router-dom';
 
 function Profile() {
-    const { user, logout } = useAuth();
+    const { user, logout } = useAuth
     const navigate = useNavigate();
 
     // 2. Define the logout event handler
