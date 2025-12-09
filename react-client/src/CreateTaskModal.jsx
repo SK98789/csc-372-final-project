@@ -69,7 +69,7 @@ function CreateTaskModal(props) {
                         <label className='columns'>
                             Description (optional):
                             <textarea value={taskDesc}
-                                onChange={(e) => setTaskDesc(e.target.value)} required>
+                                onChange={(e) => setTaskDesc(e.target.value)} >
 
                             </textarea>
                         </label>
