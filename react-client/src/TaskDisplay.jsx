@@ -9,6 +9,7 @@ import TaskService from './TaskService';
  * @returns 
  */
 function TaskDisplay(props) {
+    const [taskActiveIcon, setTaskActiveIcon] = React.useState(faCircle);
 
     async function deleteTask() {
         TaskService.deleteTask(props.task.id);
@@ -17,8 +18,10 @@ function TaskDisplay(props) {
     async function handleTaskSwitch() {
         if (props.task.still_active) {
             changeTaskIsActive(false);
+            setTaskActiveIcon(faCircleCheck);
         } else {
             changeTaskIsActive(true);
+            setTaskActiveIcon(faCircle);
         }
     }
 
@@ -35,12 +38,7 @@ function TaskDisplay(props) {
                     <p id='description'>{props.task.description}</p>
                 </div>
                 <button className='icon-button-secondary' onClick={handleTaskSwitch}>
-                    <FontAwesomeIcon icon={() => {
-                        if (props.task.still_active) {
-                            return faCircle;
-                        }
-                        else { return faCircleCheck }
-                    }} className='icons-small' />
+                    <FontAwesomeIcon icon={taskActiveIcon} className='icons' />
                 </button>
                 <button className='icon-button-secondary' onClick={deleteTask}>
                     <FontAwesomeIcon icon={faTrash} className='icons-small' />
