@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const COURSES_API_BASE_URL = "http://localhost:3000/subtasks";
+const COURSES_API_BASE_URL = "https://csc-372-final-project.onrender.com/subtasks";
 
 class SubTaskService {
     /*

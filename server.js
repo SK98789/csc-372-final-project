@@ -27,7 +27,6 @@ app.use(passport.session());
 const cors = require('cors');
 app.use(
     cors({
-        origin: [process.env.CLIENT_BASE_URL, 'https://api.forismatic.com'], // Vite frontend URL
         methods: 'GET,POST,PUT,DELETE',
         credentials: true,
     })
