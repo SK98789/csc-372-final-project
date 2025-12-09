@@ -1,3 +1,5 @@
+import React from 'react';
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faCircle, faCircleCheck } from '@fortawesome/free-solid-svg-icons'
 
@@ -9,7 +11,7 @@ import TaskService from './TaskService';
  * @returns 
  */
 function TaskDisplay(props) {
-    const [taskActiveIcon, setTaskActiveIcon] = React.useState(faCircle);
+    const [taskActiveIcon, setTaskActiveIcon] = useState(faCircle);
 
     async function deleteTask() {
         TaskService.deleteTask(props.task.id);
