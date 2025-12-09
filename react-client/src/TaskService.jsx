@@ -20,6 +20,11 @@ class TaskService {
     return axios.delete(`${COURSES_API_BASE_URL}/${id}`);
   }
 
+  updateTaskIsActive(id, isStillActive){
+    let task = {id, isStillActive};
+    return axios.put(COURSES_API_BASE_URL + "/", task);
+  }
+
 }
 
 export default new TaskService();

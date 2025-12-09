@@ -20,8 +20,16 @@ async function deleteTask(id) {
     return result.rowCount;
 }
 
+async function updateTaskIsActive(id, isStillActive){
+    let queryText = "UPDATE tasks SET still_active = $1 WHERE id = $2 ;";
+    const values = [isStillActive, id];
+    const result = await pool.query(queryText, values);
+    return result.rows[0];
+}
+
 module.exports = {
     addTask,
     getTasksFromId,
-    deleteTask
+    deleteTask,
+    updateTaskIsActive
 };
