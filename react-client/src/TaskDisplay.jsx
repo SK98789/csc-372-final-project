@@ -21,9 +21,11 @@ function TaskDisplay(props) {
         if (props.task.still_active) {
             changeTaskIsActive(false);
             setTaskActiveIcon(faCircleCheck);
+            props.refreshTasks();
         } else {
             changeTaskIsActive(true);
             setTaskActiveIcon(faCircle);
+            props.refreshTasks();
         }
     }
 
